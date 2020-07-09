@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Da Sol</title>
+        <link rel="icon" href="favicon.ico" type="image/x-icon">
+        <link rel="stylesheet" href="styles.css">
+        
+    </head>
+    <body>
+        <!--Navigation bar-->
+        <header>
+            <a href="index.html" class = "site-name">Da Sol Lee</a>
+            <nav>
+                <ul class = "nav">
+                    <li><a id="1" href="index.html">About Me</a></li>
+                    <li><a id = "4" href="contact.html">Experience</a></li>
+                    <li><a id = "2" href="projects.html">Projects</a></li>
+                    
+                </ul>
+            </nav>
+        </header>
+         <!--End of Navigation bar-->
+        <main>
+            <div class= "projects">
+                <h2>experience</h2>
+                <br>
+                <ul>
+                    <li>Incoming Summer 2021 Protiviti Consultant Intern</li>
+                    <li>Mentor Global Consultants Research Intern</li>
+                    <p> • Drafted a cyber security workforce development initiative to bridge the skills gap of entry level cyber security specialists in Orange County
+                        <br>
+                        • Independently identified 200+ job categories at most risk to be automated and future proof skills
+                        <br>
+                        • Information presented to the Business and Workforce Development committee at the Irvine Chamber of Commerce                    
+                    </p>
+                    
+                    <li> AppJam+ Program Mentor</li>
+                    <p>• Mentored 25 middle school students through the technical and design process of Android mobile application development using block-based coding
+                    </p>
+                    <li> Voluntary Research Assistant</li>
+                    <p> • Developed and integrated Q-Ball Imaging model into an already existing C based neuroimaging software, to build one comprehensive program within a team of 7 
+                    </p>
+                </ul>
+            </div>
+        </main>
+        <hr>
+        <footer>
+            <nav>
+                <a href="https://github.com/DaSol-Lee"> Github </a>
+                &middot;
+                <a href= "https://www.linkedin.com/in/da-sol-lee/"> LinkedIn</a>
+                &middot;
+                <a href = "https://www.instagram.com/da.sol/">Instagram</a>
+                &middot;
+                <a href= "https://drive.google.com/file/d/1FutwPR0fZnbUGbWTGe9Q5cGMDpaQRpds/view?usp=sharing"> Resume</a>
+            </nav>
+        </footer>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script> 
+            if (sessionStorage.getItem('link'))
+                var currentID = sessionStorage.getItem('link');
+                $('#' + currentID).addClass('active');
+        </script>
+
+        <script>
+            $('ul.nav > li').click(function(){
+            $(this).children('a').toggleClass('active');
+            sessionStorage.setItem('link', ($(this).children('a').attr("id")));
+            $(this).siblings('li').children('a').removeClass('active');
+            
+            });
+        </script>
+        
+        <script>
+            $(".site-name").click(function(){
+                $('#1').addClass('active');
+                    sessionStorage.setItem('link', "1");
+            });
+        </script>
+    </body>
+</html>

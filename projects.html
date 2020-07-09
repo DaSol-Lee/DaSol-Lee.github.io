@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Da Sol</title>
+        <link rel="icon" href="favicon.ico" type="image/x-icon">
+        <link rel="stylesheet" href="styles.css">
+        
+    </head>
+    <body>
+        <!--Navigation bar-->
+        <header>
+            <a href="index.html" class = "site-name">Da Sol Lee</a>
+            <nav>
+                <ul class = "nav">
+                    <li><a id="1" href="index.html">About Me</a></li>
+                    <li><a id = "4" href="contact.html">Experience</a></li>
+                    <li><a id = "2" href="projects.html">Projects</a></li>
+                    
+                    
+                </ul>
+            </nav>
+        </header>
+         <!--End of Navigation bar-->
+        <main>
+            <div class= "projects">
+                <h2>projects</h2>
+                <br>
+                <ul>
+                    <li><a class = "project-name"href="https://github.com/DaSol-Lee/buddyBill">Buddy Bill</a> 
+                        is an iOS app that allows users to conveniently split bills by uploading photo of reciept, 
+                        claiming items, and will generate what each person will pay, including the tax and tip. </li>
+                    <li><a class = "project-name"href="https://github.com/DaSol-Lee/WhatsForDinner">Whats For Dinner</a> 
+                        is a Flask + React web app where users can upload a photo of an ingredient and will identify and 
+                        generate recipes for that ingredient. </li>
+                    <li><a class = "project-name"href="https://devpost.com/software/spot-a-key">Spot-A-Key</a>
+                        is a Flask + React web app that displays a table of popular songs with the album art, 
+                        artist name, and track name in a given music key. </li>
+                    <li><a class = "project-name"href="https://github.com/DaSol-Lee/solsafe_final">SolSafe</a>
+                        is a web app that promotes safety where community members can inform others of alarming events by 
+                        searching a location on a map and creating a public note. </li>
+                    <li><a class = "project-name"href="https://github.com/DaSol-Lee/jotes">Jotes</a>
+                        is an audio-to-text conversion Flask web app. </li>
+                </ul>
+                <br>
+                See more of my projects on <a href="https://github.com/DaSol-Lee"> Github </a> and 
+                <a href="https://devpost.com/DaSol-Lee?ref_content=user-portfolio&ref_feature=portfolio&ref_medium=global-nav">Devpost</a>.
+            </div>
+
+        </main>
+        <hr>
+        <footer>
+            <nav>
+                <a href="https://github.com/DaSol-Lee"> Github </a>
+                &middot;
+                <a href= "https://www.linkedin.com/in/da-sol-lee/"> LinkedIn</a>
+                &middot;
+                <a href = "https://www.instagram.com/da.sol/">Instagram</a>
+                &middot;
+                <a href= "https://drive.google.com/file/d/1FutwPR0fZnbUGbWTGe9Q5cGMDpaQRpds/view?usp=sharing"> Resume</a>
+            </nav>
+        </footer>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script> 
+            if (sessionStorage.getItem('link'))
+                var currentID = sessionStorage.getItem('link');
+                $('#' + currentID).addClass('active');
+            
+        </script>
+
+        <script>  
+            $('ul.nav > li').click(function(){
+            $(this).children('a').toggleClass('active');
+            sessionStorage.setItem('link', ($(this).children('a').attr("id")));
+            $(this).siblings('li').children('a').removeClass('active');
+            
+            });
+        </script>
+
+        <script>
+            $(".site-name").click(function(){
+                $('#1').addClass('active');
+                    sessionStorage.setItem('link', "1");
+            
+            });
+        </script>
+    </body>
+</html>

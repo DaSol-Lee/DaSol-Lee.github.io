@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Da Sol</title>
+
+        <link rel="stylesheet" href="styles.css">
+        
+        <link rel="icon" href="favicon.ico" type="image/x-icon">
+    </head>
+
+    <body>
+        <!--Navigation bar-->
+        <header>
+            <a href="index.html" class = "site-name">Da Sol Lee</a>
+            <nav>
+                <ul class = "nav">
+                    <li><a id="1" href="index.html">About Me</a></li>
+                    <li><a id = "4" href="contact.html">Experience</a></li>
+                    <li><a id = "2" href="projects.html">Projects</a></li>
+                    
+                    
+                </ul>
+            </nav>
+        </header>
+         <!--End of Navigation bar-->
+         
+        <main>
+            <div class= "projects">
+                <h2>about me</h2>
+            </div>
+            <div id="wrapper">
+                <div id="left">
+                    <img src="poloroid.png" style=" height: 260px;max-width: 100vw;" alt="Profile pic">
+                </div>
+                <div id="right">
+                    <p style="float:right;">Hello, I'm Da Sol!  <br><br>
+                        I am a 3<sup>rd</sup> year student majoring in Computer Science and minoring in Statistics at the University of California, Irvine</a>.
+                        <br>
+                        (Expected Graduation: June 2022)
+                        <br> <br>
+                        The best way to get in touch with me is to email me at <a href="mailto:dasl1@uci.edu">dasl1@uci.edu</a>.
+                        <br> <br>
+                    </p>
+                </div>
+            </div>
+        </main>
+        <hr>
+        <footer>
+            <nav>
+                <a href="https://github.com/DaSol-Lee"> Github </a>
+                &middot;
+                <a href= "https://www.linkedin.com/in/da-sol-lee/"> LinkedIn</a>
+                &middot;
+                <a href = "https://www.instagram.com/da.sol/">Instagram</a>
+                &middot;
+                <a href= "https://drive.google.com/file/d/1FutwPR0fZnbUGbWTGe9Q5cGMDpaQRpds/view?usp=sharing"> Resume</a>
+            </nav>
+        </footer>
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        
+        <script> 
+            if (sessionStorage.getItem('link')) {
+                var currentID = sessionStorage.getItem('link');
+                $('#' + currentID).addClass('active');
+            } else{ /* highlights 'About Me' (default page) immediately */
+                $('#1').addClass('active');
+                sessionStorage.setItem('link', "1");
+            }
+        </script>
+
+        <script>      
+            $('ul.nav > li').click(function(){
+            $(this).children('a').toggleClass('active');
+            sessionStorage.setItem('link', ($(this).children('a').attr("id")));
+            $(this).siblings('li').children('a').removeClass('active');
+            });
+        </script>
+
+        <script> /* if 'Da Sol Lee' is clicked, highlight 'About Me' */
+            $(".site-name").click(function(){
+                $('#1').addClass('active');
+                sessionStorage.setItem('link', "1");
+            });
+        </script>
+        
+    </body>
+</html>
